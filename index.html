@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adeline Shop 237- Shop the Latest Trends</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#home" class="logo">
+                    <img src="images/blogo.png" alt="Fashion Store Logo" class="logo-image" onerror="this.style.display='none'">
+                    <h1>ADELINE SHOP 237</h1>
+                </a>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Découvrez votre style</h2>
+            <p>Découvrez les dernières tendances de la mode et trouvez votre look parfait</p>
+            <a href="#products" class="btn btn-primary">Achetez maintenant</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Nos Produits</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Notre histoire</h2>
+                    <div class="about-story">
+                        <p class="lead">Depuis 2006, Rachael shopping est à l'avant-garde du style et de l'innovation, apportant une élégance intemporelle et des tendances contemporaines aux passionnés de mode du monde entier..</p>
+                        
+                        <p>Ce qui a commencé comme une petite boutique au cœur du quartier de la mode est devenu une destination prisée pour ceux qui apprécient la qualité, le savoir-faire et l'art de l'expression de soi à travers les vêtements. Notre voyage a commencé avec une simple conviction : que chacun mérite d'avoir accès à des vêtements bien conçus et élégants qui lui donnent confiance et authenticité.</p>
+                        
+                        <p>Au fil des décennies, nous avons constitué des collections qui allient sophistication classique et sensibilité moderne. De nos pièces sur mesure emblématiques à nos essentiels de mode décontractée, chaque article de notre collection est soigneusement sélectionné pour répondre à nos normes élevées de qualité, de confort et de style.</p>
+                        
+                        <p>Aujourd'hui, Rachael shopping continue d'honorer son héritage tout en embrassant l'avenir de la mode. Nous restons engagés dans des pratiques durables, un approvisionnement éthique et le soutien des designers et artisans talentueux qui donnent vie à notre vision. Notre mission est simple : vous aider à découvrir votre style unique et à vous exprimer en toute confiance.</p>
+                        
+                        <p class="closing">Rejoignez-nous dans ce voyage de style, de qualité et d'élégance intemporelle. Bienvenue chez Fashion Store, où la mode rencontre la tradition et où chaque pièce raconte une histoire.</p>
+                    </div>
+                </div>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Artisanat de qualité</h3>
+                        <p>Plus de 35 ans d'expertise dans la sélection de matériaux de qualité et de designs exceptionnels</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Passion pour la mode</h3>
+                        <p>Animé par un véritable amour pour le style et par l'envie d'aider les clients à trouver leur look parfait</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Pratiques durables</h3>
+                        <p>Engagé en faveur de l'approvisionnement éthique et de la responsabilité environnementale</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Axé sur la communauté</h3>
+                        <p>Soutenir les créateurs locaux et construire une communauté de passionnés de mode</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Votre panier est vide</p>
+            </div>
+            <div class="cart-footer">
+                <div class="checkout-form" id="checkoutForm" style="display: none;">
+                    <h4>Informations de livraison</h4>
+                    <form id="customerInfoForm">
+                        <div class="form-group">
+                            <label for="customerName">Nom complet *</label>
+                            <input type="text" id="customerName" name="customerName" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Téléphone *</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" placeholder="+237 6XX XXX XXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerSize">Taille *</label>
+                            <input type="text" id="customerSize" name="customerSize" placeholder="Ex: 42, M, L" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerCity">Ville *</label>
+                            <input type="text" id="customerCity" name="customerCity" placeholder="Votre ville" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerTown">Quartier *</label>
+                            <input type="text" id="customerTown" name="customerTown" placeholder="Votre quartier" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="cart-options" id="cartOptions" style="display: none;">
+                    <h4>Choisir le paiement*</h4>
+                    <div class="option-group">
+                        <label class="option-item">
+                            <input type="radio" name="cartOption" value="Mobile money (MOMO)" required>
+                            <span class="option-label">Mobile money (MOMO)</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="cartOption" value="Orange Money (OM)" required>
+                            <span class="option-label">Orange Money (OM)</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="cartOption" value="Virement Bancaire" required>
+                            <span class="option-label">Virement Bancaire</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">0.00</span>.FCFA</strong>
+                </div>
+                <button class="btn btn-primary checkout-btn" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Adeline Shop 237</h4>
+                    <p>Votre boutique unique pour les dernières tendances de la mode.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@adelineshop237.com</p>
+                    <p>Phone: + (237) 691-735-093</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Adeline Shop 237. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
